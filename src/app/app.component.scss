@@ -1,0 +1,8 @@
+main {
+  width: calc(100vw - var(--mv-side-navigator-width));
+  min-height: calc(100vh - var(--mv-header-height));
+  flex: 1;
+  display: flex;
+  padding: 20px var(--mv-site-padding-inline);
+  margin-left: var(--mv-side-navigator-width);
+}

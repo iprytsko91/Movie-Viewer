@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="overview" *ngIf="(selectedMovie$ | async) as movie;else nothingSelected">
+    <div class="poster">
+      <img [ngSrc]="movie.poster_path | mvPoster"
+           [alt]="movie.title"
+           priority
+           fill>
+    </div>
+    <div class="details">
+      <h1>{{movie.title}} ({{movie.release_date | date:'YYYY'}})</h1>
+      <p>&#11088; {{movie.vote_average | number: '1.0-1'}}</p>
+      <h3>Overview</h3>
+      <p>{{movie.overview}}</p>
+    </div>
+  </div>
+
+  <ng-template #nothingSelected>
+    <h2>Please select movie to see details</h2>
+  </ng-template>
+</div>

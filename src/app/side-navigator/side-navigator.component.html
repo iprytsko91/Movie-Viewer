@@ -1,0 +1,29 @@
+<aside>
+  <div>
+    <ng-container *ngIf="(movies$ | async) as movies">
+      <ng-container *ngFor="let movie of movies">
+        <section class="navigation-item"
+                 [class.active]="(selectedMovie$ | async)?.id === movie.id"
+                 (click)="selectMovie(movie)">
+          <span class="title">{{ movie.title }}</span>
+          <span class="arrow-right">&#9654;</span>
+        </section>
+      </ng-container>
+      <div class="lazy-load-element" mvLazyLoad [loadCallback]="loadMore">
+        Loading...
+      </div>
+
+      <div *ngIf="!movies.length">
+        Nothing to show
+      </div>
+    </ng-container>
+
+  </div>
+
+  <div class="pages">
+    <ng-container *ngIf="(paginationInfo$ | async) as paginationInfo">
+      <!-- TODO: why total comes always different in response for different pages? Some issue on server?-->
+      <span>Showed {{ paginationInfo.loadedCount }} Of {{ paginationInfo.total }}</span>
+    </ng-container>
+  </div>
+</aside>

@@ -1,0 +1,19 @@
+header {
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: var(--mv-header-height);
+  display: flex;
+  background: var(--mv-color-blue);
+  box-shadow: 0 2px 4px #00000080;
+
+  .container {
+    padding: 0 var(--mv-site-padding-inline);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: var(--mv-color-white);
+  }
+}

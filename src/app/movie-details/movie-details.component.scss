@@ -1,0 +1,19 @@
+.container {
+  .overview {
+    display: flex;
+    gap: 64px;
+
+    .poster {
+      position: relative;
+      width: 220px;
+      height: 330px;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1
+    }
+  }
+}
